@@ -17,6 +17,16 @@ fun main() {
     println()
     println("------------------")
     println(funcionarios.find { it.nomeF == "WEB" })
+    println("------------------")
+
+    println()
+    println()
+    println("------------------")
+    funcionarios
+        .sortedBy { it.salario }
+        .forEach { println(it) }
+
+
 }
 data class Funcionario(
     val nomeF:String,
