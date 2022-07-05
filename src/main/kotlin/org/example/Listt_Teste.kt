@@ -7,7 +7,7 @@ fun main() {
     val nomeF3 = Funcionario("WEB", 2_500.00)
 
     val funcionarios = listOf(nomeF1,nomeF2,nomeF3)
-
+    println("------------------")
     funcionarios.forEach{ println(it)
     println()
     }
@@ -25,6 +25,8 @@ fun main() {
     funcionarios
         .sortedBy { it.salario }
         .forEach { println(it) }
+    println()
+    println("------------------")
 
 
 }
