@@ -2,9 +2,9 @@ package org.example
 
 fun main() {
 
-    val nomeF1 = Funcionario("Joao", 1_000.00)
-    val nomeF2 = Funcionario("Dani", 5_000.00)
-    val nomeF3 = Funcionario("WEB", 2_500.00)
+    val nomeF1 = Funcionario("Joao", 1_000.00,"CLT")
+    val nomeF2 = Funcionario("Dani", 5_000.00,"PJ")
+    val nomeF3 = Funcionario("WEB", 2_500.00,"CLT")
 
     val funcionarios = listOf(nomeF1,nomeF2,nomeF3)
     println("------------------")
@@ -29,14 +29,26 @@ fun main() {
     println("------------------")
 
 
+    println()
+    println()
+    println("------------------")
+    funcionarios
+        .groupBy { it.contrato }
+        .forEach { println(it) }
+    println()
+    println("------------------")
+
 }
 data class Funcionario(
     val nomeF:String,
-    val salario:Double
+    val salario:Double,
+    val contrato:String
 )   {
     override fun toString(): String =
         """
             nome:       $nomeF
             Salario:    R$ $salario
+            Contrato:   $contrato
+             
         """.trimIndent()
     }
